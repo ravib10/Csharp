@@ -1,1 +1,7 @@
 *.feature.cs
+ExtentReports/
+Snapshots/
+bin/
+obj/
+*.log
+.vscode/
