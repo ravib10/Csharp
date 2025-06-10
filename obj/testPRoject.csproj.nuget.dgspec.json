@@ -75,6 +75,10 @@
             "Reqnroll.NUnit": {
               "target": "Package",
               "version": "[2.4.1, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[3.1.0, )"
             }
           },
           "imports": [

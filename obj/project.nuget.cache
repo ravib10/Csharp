@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uJrwj+07WW8=",
+  "dgSpecHash": "bPJtRJWWMIs=",
   "success": true,
   "projectFilePath": "/Users/ravinder.budhawan/Desktop/Octopus/TestFolder/testPRoject/testPRoject.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "/Users/ravinder.budhawan/.nuget/packages/extentreports/5.0.4/extentreports.5.0.4.nupkg.sha512",
     "/Users/ravinder.budhawan/.nuget/packages/fluentassertions/8.3.0/fluentassertions.8.3.0.nupkg.sha512",
     "/Users/ravinder.budhawan/.nuget/packages/gherkin/30.0.0/gherkin.30.0.0.nupkg.sha512",
+    "/Users/ravinder.budhawan/.nuget/packages/log4net/3.1.0/log4net.3.1.0.nupkg.sha512",
     "/Users/ravinder.budhawan/.nuget/packages/microsoft.applicationinsights/2.22.0/microsoft.applicationinsights.2.22.0.nupkg.sha512",
     "/Users/ravinder.budhawan/.nuget/packages/microsoft.aspnetcore.razor.language/3.1.0/microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",
     "/Users/ravinder.budhawan/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0/microsoft.codeanalysis.analyzers.3.0.0.nupkg.sha512",
@@ -34,6 +35,7 @@
     "/Users/ravinder.budhawan/.nuget/packages/reqnroll.nunit/2.4.1/reqnroll.nunit.2.4.1.nupkg.sha512",
     "/Users/ravinder.budhawan/.nuget/packages/reqnroll.tools.msbuild.generation/2.4.1/reqnroll.tools.msbuild.generation.2.4.1.nupkg.sha512",
     "/Users/ravinder.budhawan/.nuget/packages/system.collections.immutable/8.0.0/system.collections.immutable.8.0.0.nupkg.sha512",
+    "/Users/ravinder.budhawan/.nuget/packages/system.configuration.configurationmanager/4.5.0/system.configuration.configurationmanager.4.5.0.nupkg.sha512",
     "/Users/ravinder.budhawan/.nuget/packages/system.diagnostics.diagnosticsource/5.0.0/system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
     "/Users/ravinder.budhawan/.nuget/packages/system.drawing.common/5.0.0/system.drawing.common.5.0.0.nupkg.sha512",
     "/Users/ravinder.budhawan/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
@@ -42,6 +44,7 @@
     "/Users/ravinder.budhawan/.nuget/packages/system.reflection.metadata/8.0.0/system.reflection.metadata.8.0.0.nupkg.sha512",
     "/Users/ravinder.budhawan/.nuget/packages/system.runtime.compilerservices.unsafe/5.0.0/system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
     "/Users/ravinder.budhawan/.nuget/packages/system.security.accesscontrol/5.0.0/system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "/Users/ravinder.budhawan/.nuget/packages/system.security.cryptography.protecteddata/4.5.0/system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
     "/Users/ravinder.budhawan/.nuget/packages/system.security.permissions/5.0.0/system.security.permissions.5.0.0.nupkg.sha512",
     "/Users/ravinder.budhawan/.nuget/packages/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg.sha512",
     "/Users/ravinder.budhawan/.nuget/packages/system.text.encoding.codepages/4.5.1/system.text.encoding.codepages.4.5.1.nupkg.sha512",

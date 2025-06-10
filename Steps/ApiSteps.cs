@@ -6,6 +6,11 @@ using Newtonsoft.Json.Linq;
 using AventStack.ExtentReports;
 using testPRoject.Utils;
 using System;
+using log4net;
+using System.IO;
+using log4net.Config;
+
+
 
 [Binding]
 public class ApiSteps
@@ -17,24 +22,66 @@ public class ApiSteps
 
     //     private ExtentTest _test;
     
+    private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
     private HttpClient _client = null!;
 private HttpResponseMessage _response = null!;
 private string _userId = null!;
 private JObject _responseBody = null!;
-private ExtentTest _test = null!;
+    private ExtentTest _test = null!;
+private readonly ScenarioContext _scenarioContext;
+ public ApiSteps(ScenarioContext scenarioContext)
+        {
+            _scenarioContext = scenarioContext;
+        }
 
     [BeforeScenario]
     public void Setup()
 
     {
     
+            var logRepository = LogManager.GetRepository(System.Reflection.Assembly.GetEntryAssembly());
+            var v = new FileInfo(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "/Support/log4net.config");
+            XmlConfigurator.Configure(logRepository, new FileInfo(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "/Support/log4net.config"));
+            log.Info("yuppie");
+
+            
         _client = new HttpClient();
         // Create a new ExtentTest instance per scenario using AsyncLocal-based manager
         _test = ExtentReportManager.CreateTest(TestContext.CurrentContext.Test.Name);
        
     }
-    
 
+[BeforeStep]
+        public void BeforeEachStep()
+        {
+            // Access the step text from ScenarioContext
+            // Note: CurrentStepInfo.StepDefinition.Text might be null if called too early or in certain async contexts
+            // If Text is null, fallback to StepDefinition.MethodInfo.Name
+        var stepText = _scenarioContext.StepContext?.StepInfo?.Text ??
+               _scenarioContext.StepContext?.StepInfo?.BindingMatch?.StepBinding?.Method?.Name ??
+               "Unknown Step";
+                           
+
+            // Log to the Serilog logger instance that was initialized in Program.cs
+        log.Info($"Entering Step: '{stepText}'");
+        }
+
+        [AfterStep]
+        public void AfterEachStep()
+        {
+            // Access the step text from ScenarioContext
+            // Note: CurrentStepInfo.StepDefinition.Text might be null if called too early or in certain async contexts
+            // If Text is null, fallback to StepDefinition.MethodInfo.Name
+        var stepText = _scenarioContext.StepContext?.StepInfo?.Text ??
+               _scenarioContext.StepContext?.StepInfo?.BindingMatch?.StepBinding?.Method?.Name ??
+               "Unknown Step";
+                           
+
+            // Log to the Serilog logger instance that was initialized in Program.cs
+        log.Info($"Exiting Step: '{stepText}'");
+        }
+ 
     [Given("I have user ID (.*)")]
     public void GivenIHaveUserId(string userId)
     {
@@ -63,7 +110,7 @@ private ExtentTest _test = null!;
         _test.Info($"Asserting user name. Expected: {expectedName}, Actual: {actualName}");
    try
     {
-        Assert.That(actualName, Is.EqualTo("expectedName"), "User name did not match");
+        Assert.That(actualName, Is.EqualTo(expectedName), "User name did not match");
         _test.Pass("User name matched.");
     }
     catch (Exception ex)
