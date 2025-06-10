@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schemas.reqnroll.net/reqnroll-config-latest.json",
+  "bindingAssemblies": [
+    {
+      "assembly": "testPRoject"
+    }
+  ],
+  "livingDocExecutionDataCollector": {
+    "enabled": true,
+    "filepath": "TestExecution.json",
+    "projectLanguage": "de-ch",
+    "projectName": "testPRoject",
+    "workItemPrefix": "wi-",
+    "workItemUrlTemplate": "https://url.to.your.backlog/edit/{0}/"
+  },
+  "language": {
+    "feature": "en-US",
+    "binding": "en-US"
+  }
+}
