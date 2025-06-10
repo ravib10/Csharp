@@ -3,7 +3,6 @@ ExtentReports/
 Snapshots/
 bin/
 obj/
-*.log
 .vscode/
 *.suo
 *.user
